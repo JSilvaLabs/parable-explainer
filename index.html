@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Parable Explainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Simple Parable Explainer</h1>
+
+    <div class="container">
+
+        <nav id="parable-list" aria-label="Select a Parable">
+            <p>Loading parables...</p>
+        </nav>
+
+        <main id="parable-display">
+
+            <article id="parable-text" aria-live="polite">
+                <h2>Parable Text</h2>
+                <p>Please select a parable from the list to see its text.</p>
+            </article>
+
+            <aside id="parable-explanation" aria-live="polite">
+                <h3>Explanation</h3>
+                <p>Select a parable to see its explanation.</p>
+            </aside>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

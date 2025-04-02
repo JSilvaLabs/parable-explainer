@@ -1,0 +1,96 @@
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif; /* A common sans-serif font */
+    line-height: 1.6; /* Improve readability */
+    margin: 20px; /* Add some space around the content */
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Default text color */
+}
+
+/* Main heading styling */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* Container for layout using Flexbox */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between columns */
+}
+
+/* Parable selection list styling */
+#parable-list {
+    flex: 1; /* Takes up 1 part of the available space */
+    min-width: 180px; /* Ensure minimum width for the list */
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+/* Styling for buttons inside the parable list */
+#parable-list button {
+    display: block; /* Make buttons take full width */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px; /* Space between buttons */
+    text-align: left;
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer; /* Indicate clickable */
+    font-size: 1em;
+    transition: background-color 0.2s; /* Smooth hover effect */
+}
+
+#parable-list button:hover {
+    background-color: #dcdcdc; /* Slightly darker on hover */
+}
+
+/* Styling for the selected button */
+#parable-list button.selected {
+    background-color: #c5c5c5; /* Darker background for selected */
+    font-weight: bold;
+    border-color: #aaa;
+}
+
+/* Main display area styling */
+#parable-display {
+    flex: 3; /* Takes up 3 parts of the available space */
+    min-width: 300px; /* Ensure minimum width */
+}
+
+/* Styling for the parable text area */
+#parable-text {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Styling for the explanation area */
+#parable-explanation {
+    background-color: #f0f8ff; /* Light blue background */
+    border: 1px solid #cce;
+    border-radius: 5px;
+    padding: 20px;
+    font-style: italic;
+    color: #555;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Headings within display areas */
+#parable-text h2,
+#parable-explanation h3 {
+    margin-top: 0; /* Remove default top margin */
+    color: #666;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
