@@ -8,7 +8,7 @@ body {
     color: #212529; /* Bootstrap default text color */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure footer potential */
+    min-height: 100vh;
 }
 
 /* --- Typography --- */
@@ -27,6 +27,14 @@ h2, h3 {
     margin-bottom: 16px;
     font-weight: 400;
 }
+
+/* Enhance readability for explanation text */
+#parable-explanation p {
+    line-height: 1.7; /* Slightly more spacing for longer text */
+    font-size: 1.05rem; /* Slightly larger font */
+    margin-bottom: 0;
+}
+
 
 /* --- Layout --- */
 .container {
@@ -133,16 +141,15 @@ h2, h3 {
 /* Styling for the explanation area */
 #parable-explanation {
     margin-bottom: 25px;
-    background-color: #eef7ff; /* Lighter blue */
-    border: 1px solid #b8d B6; /* Matching border */
+    background-color: #f0f8ff; /* Light blue background */
+    border: 1px solid #b8d6e6; /* Matching border */
     border-radius: 4px;
     padding: 15px 20px;
     font-style: italic;
     color: #31506a; /* Darker blue text */
 }
-#parable-explanation p {
-    margin-bottom: 0;
-}
+/* Explanation paragraph styling already enhanced above */
+
 
 /* Styling for reference area */
 #parable-reference {
@@ -152,21 +159,32 @@ h2, h3 {
     border-top: 1px solid #e9ecef; /* Lighter top border */
     padding-top: 15px;
 }
-#parable-reference p { /* Styling for the 'References:' label */
+#parable-reference p.ref-label { /* Styling for the 'References:' label */
     margin: 0 0 5px 0;
     font-weight: 500;
     color: #495057;
 }
-/* Example styling if references are displayed as a list (adjust as needed) */
-#parable-reference ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 5px;
-  margin-bottom: 0;
+/* Styling for clickable reference elements (using buttons styled as links) */
+#parable-reference button.ref-link {
+    background: none;
+    border: none;
+    color: #007bff; /* Link color */
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 2px 0;
+    margin-right: 8px; /* Space between references */
+    font-size: 0.9em; /* Inherit size or adjust */
+    display: inline; /* Display references inline */
 }
-#parable-reference li {
-  margin-bottom: 3px;
-  font-size: 0.9em; /* Slightly smaller for list items */
+#parable-reference button.ref-link:hover {
+    color: #0056b3; /* Darker link color on hover */
+}
+/* Style for the reference link corresponding to the currently displayed text */
+#parable-reference button.ref-link.active {
+    font-weight: bold;
+    text-decoration: none;
+    color: #212529; /* Black/dark text */
+    cursor: default;
 }
 
 
@@ -204,6 +222,9 @@ h2, h3 {
     #parable-display {
         padding: 20px;
     }
+     #parable-explanation p {
+        font-size: 1rem; /* Slightly smaller on smaller screens */
+     }
 }
 
 @media (max-width: 600px) {
@@ -230,6 +251,13 @@ h2, h3 {
         font-size: 1.8rem;
         margin-bottom: 20px;
     }
+     #parable-explanation p {
+        font-size: 0.95rem; /* Slightly smaller on mobile */
+     }
+     #parable-reference button.ref-link {
+        margin-right: 5px; /* Reduce spacing on mobile */
+        margin-bottom: 3px; /* Allow slight wrap */
+     }
 }
 
 /* Visually hidden class */
