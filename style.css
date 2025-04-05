@@ -34,6 +34,12 @@ h2, h3 {
     font-size: 1.05rem; /* Slightly larger font */
     margin-bottom: 0;
 }
+/* Ensure good readability for main parable text too */
+#parable-text p {
+     line-height: 1.7;
+     font-size: 1.05rem;
+     margin-bottom: 0;
+}
 
 
 /* --- Layout --- */
@@ -133,22 +139,17 @@ h2, h3 {
 #parable-text {
     margin-bottom: 25px;
 }
-#parable-text p {
-    margin-bottom: 0;
-}
-
 
 /* Styling for the explanation area */
 #parable-explanation {
     margin-bottom: 25px;
-    background-color: #f0f8ff; /* Light blue background */
+    background-color: #eef7ff; /* Lighter blue */
     border: 1px solid #b8d6e6; /* Matching border */
     border-radius: 4px;
     padding: 15px 20px;
     font-style: italic;
     color: #31506a; /* Darker blue text */
 }
-/* Explanation paragraph styling already enhanced above */
 
 
 /* Styling for reference area */
@@ -173,8 +174,10 @@ h2, h3 {
     cursor: pointer;
     padding: 2px 0;
     margin-right: 8px; /* Space between references */
+    margin-bottom: 3px; /* Allow wrapping */
     font-size: 0.9em; /* Inherit size or adjust */
     display: inline; /* Display references inline */
+    line-height: 1.5; /* Adjust line height for wrapped links */
 }
 #parable-reference button.ref-link:hover {
     color: #0056b3; /* Darker link color on hover */
@@ -185,6 +188,14 @@ h2, h3 {
     text-decoration: none;
     color: #212529; /* Black/dark text */
     cursor: default;
+}
+
+/* Optional section for themes/cross-refs */
+#additional-content {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.9em;
 }
 
 
@@ -222,7 +233,7 @@ h2, h3 {
     #parable-display {
         padding: 20px;
     }
-     #parable-explanation p {
+     #parable-explanation p, #parable-text p {
         font-size: 1rem; /* Slightly smaller on smaller screens */
      }
 }
@@ -251,12 +262,11 @@ h2, h3 {
         font-size: 1.8rem;
         margin-bottom: 20px;
     }
-     #parable-explanation p {
+     #parable-explanation p, #parable-text p {
         font-size: 0.95rem; /* Slightly smaller on mobile */
      }
      #parable-reference button.ref-link {
         margin-right: 5px; /* Reduce spacing on mobile */
-        margin-bottom: 3px; /* Allow slight wrap */
      }
 }
 

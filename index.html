@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parable Explainer (MVP3)</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Parable Explainer (MRP)</title> <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,9 +13,7 @@
 
         <nav id="parable-list-section" aria-labelledby="parable-list-heading">
             <h2 id="parable-list-heading" class="visually-hidden">Select a Parable</h2>
-            <input type="search" id="search-input" placeholder="Filter parables by title..." aria-label="Filter parables by title">
-
-            <div id="parable-list" role="navigation" aria-label="Parable List">
+            <input type="search" id="search-input" placeholder="Search title, text, explanation..." aria-label="Search parables by title, text, or explanation"> <div id="parable-list" role="navigation" aria-label="Parable List">
                 <p>Loading parables...</p>
                 </div>
         </nav>
@@ -34,7 +31,10 @@
             </aside>
 
             <footer id="parable-reference">
-                <p>References:</p> </footer>
+                <p class="ref-label">References:</p> </footer>
+
+            <section id="additional-content" aria-label="Additional Content">
+                 </section>
 
             <div id="message-display" aria-live="assertive">
                  </div>
@@ -43,8 +43,7 @@
 
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="script.js" type="module"></script> </body>
 </html>
 
 <style>
