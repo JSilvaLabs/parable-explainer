@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Parable Explainer</title>
+    <title>Parable Explainer Prototype</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Simple Parable Explainer</h1>
+    <h1>Parable Explainer</h1>
 
     <div class="container">
 
-        <nav id="parable-list" aria-label="Select a Parable">
-            <p>Loading parables...</p>
+        <nav id="parable-list-section" aria-labelledby="parable-list-heading">
+            <h2 id="parable-list-heading" class="visually-hidden">Select a Parable</h2>
+            <input type="search" id="search-input" placeholder="Filter parables by title..." aria-label="Filter parables by title">
+            
+            <div id="parable-list" role="navigation" aria-label="Parable List">
+                <p>Loading parables...</p>
+                </div>
         </nav>
 
-        <main id="parable-display">
+        <main id="parable-display" aria-live="polite">
 
-            <article id="parable-text" aria-live="polite">
+            <article id="parable-text">
                 <h2>Parable Text</h2>
-                <p>Please select a parable from the list to see its text.</p>
+                <p>Select a parable from the list to see its text.</p>
             </article>
 
-            <aside id="parable-explanation" aria-live="polite">
+            <aside id="parable-explanation">
                 <h3>Explanation</h3>
                 <p>Select a parable to see its explanation.</p>
             </aside>
+
+            <footer id="parable-reference">
+                <p>Reference: (Select a parable)</p>
+            </footer>
+
+            <div id="message-display" aria-live="assertive">
+                 </div>
 
         </main>
 
@@ -35,3 +47,17 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

@@ -1,10 +1,10 @@
 /* Basic body styling */
 body {
-    font-family: Arial, sans-serif; /* A common sans-serif font */
-    line-height: 1.6; /* Improve readability */
-    margin: 20px; /* Add some space around the content */
-    background-color: #f9f9f9; /* Light background */
-    color: #333; /* Default text color */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 /* Main heading styling */
@@ -21,76 +21,147 @@ h1 {
     gap: 20px; /* Space between columns */
 }
 
-/* Parable selection list styling */
+/* Left column: Search and List */
+#parable-list-section {
+    flex: 1; /* Takes up 1 part */
+    min-width: 200px; /* Minimum width */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Search input styling */
+#search-input {
+    width: 100%; /* Full width of its container */
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in width */
+    font-size: 1em;
+}
+
+/* Parable selection list container styling */
 #parable-list {
-    flex: 1; /* Takes up 1 part of the available space */
-    min-width: 180px; /* Ensure minimum width for the list */
+    flex-grow: 1; /* Allow list to take remaining space in column */
     background-color: #fff;
     padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px; /* Slightly rounded corners */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow-y: auto; /* Add scroll if list is long */
+    max-height: 60vh; /* Limit height to encourage scroll */
 }
 
 /* Styling for buttons inside the parable list */
 #parable-list button {
-    display: block; /* Make buttons take full width */
+    display: block;
     width: 100%;
     padding: 10px;
-    margin-bottom: 8px; /* Space between buttons */
+    margin-bottom: 8px;
     text-align: left;
     background-color: #e9e9e9;
     border: 1px solid #ccc;
     border-radius: 4px;
-    cursor: pointer; /* Indicate clickable */
+    cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.2s; /* Smooth hover effect */
+    transition: background-color 0.2s;
 }
 
 #parable-list button:hover {
-    background-color: #dcdcdc; /* Slightly darker on hover */
+    background-color: #dcdcdc;
 }
 
 /* Styling for the selected button */
 #parable-list button.selected {
-    background-color: #c5c5c5; /* Darker background for selected */
+    background-color: #c5c5c5;
     font-weight: bold;
     border-color: #aaa;
 }
 
-/* Main display area styling */
+/* Right column: Main display area styling */
 #parable-display {
-    flex: 3; /* Takes up 3 parts of the available space */
-    min-width: 300px; /* Ensure minimum width */
+    flex: 3; /* Takes up 3 parts */
+    min-width: 300px; /* Minimum width */
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* Styling for the parable text area */
 #parable-text {
     margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* Styling for the explanation area */
 #parable-explanation {
+    margin-bottom: 20px;
     background-color: #f0f8ff; /* Light blue background */
     border: 1px solid #cce;
-    border-radius: 5px;
-    padding: 20px;
+    border-radius: 4px; /* Slightly smaller radius */
+    padding: 15px;
     font-style: italic;
+    color: #444; /* Slightly darker text */
+}
+
+/* Styling for reference area */
+#parable-reference {
+    margin-top: 15px;
+    font-size: 0.9em;
     color: #555;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-top: 1px solid #eee;
+    padding-top: 10px;
 }
 
 /* Headings within display areas */
 #parable-text h2,
 #parable-explanation h3 {
-    margin-top: 0; /* Remove default top margin */
-    color: #666;
+    margin-top: 0;
+    color: #555; /* Slightly darker headings */
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
     margin-bottom: 15px;
+}
+
+/* Styling for message/error display area */
+#message-display {
+    margin-top: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+}
+#message-display.error { /* Style for errors */
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}
+#message-display.loading { /* Style for loading */
+     color: #31708f;
+     background-color: #d9edf7;
+     border: 1px solid #bce8f1;
+}
+
+
+/* Basic Responsive rules */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack columns on small screens */
+    }
+    #parable-list {
+        max-height: 40vh; /* Adjust height for smaller screens */
+    }
+}
+
+/* Visually hidden class (if not keeping in HTML) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
